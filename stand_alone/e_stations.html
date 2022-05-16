@@ -765,10 +765,10 @@ and Q4 contains the top 25%.</p>
 relationship between stations and zip code income. They tell more a
 story of the distribution of income than of the relationship between
 station/income. They are good to visualize the quantity of stations per
-zip code and see the ourliers. It’s worth noting that Menlo Park in
-California’s Silicon Valley has a whopping <strong>359</strong> electric
-fuel stations and a median family income of
-<strong>$204,557</strong>!!</p>
+zip code and see the ourliers. It’s worth noting that <strong>zip code
+94025, Menlo Park, in California’s Silicon Valley has a whopping 359
+electric fuel stations and a median family income of
+$204,557</strong>!!</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>iee_data <span class="sc">%&gt;%</span> </span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(fam_med_income),<span class="sc">!</span><span class="fu">is.na</span>(e_stations)) <span class="sc">%&gt;%</span> </span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(fam_med_income, e_stations)) <span class="sc">+</span></span>
