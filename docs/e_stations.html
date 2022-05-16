@@ -686,10 +686,10 @@ income ones, I calculated the proportion of zip codes with e stations in
 each income quartile. The difference here is more telling. The
 proportion of zip codes with e stations is 17% in the bottom family
 median income quartile and 47% in the highest, which means zip codes
-with family median incomes in the top 25% are 2.76 more likely to have
-an e station than those in the bottom 25%. In other words, for every low
-income zip code, there are 2.76 high income ones that have at least one
-e station.</p>
+with family median incomes in the top 25% are 2.76 times more likely to
+have an e station than those in the bottom 25%. In other words, for
+every low income zip code, there are 2.76 high income ones that have at
+least one e station.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>fam_prop <span class="ot">&lt;-</span> iee_data <span class="sc">%&gt;%</span> </span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(fam_med_income)) <span class="sc">%&gt;%</span> </span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(has_e,fam_quant) <span class="sc">%&gt;%</span>  </span>
