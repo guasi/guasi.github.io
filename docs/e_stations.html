@@ -609,11 +609,11 @@ rely on counting the NAs, so I created a “has_e” column. I also added a
 quartile factor for family median income and individual median
 earnings.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>qs <span class="ot">&lt;-</span> <span class="fu">quantile</span>(iee_data<span class="sc">$</span>fam_med_income, <span class="at">na.rm =</span> T)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>qs_lbls <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,<span class="cf">function</span>(i) <span class="fu">paste0</span>(<span class="st">&quot;Q&quot;</span>,i,<span class="st">&quot; &quot;</span>,scales<span class="sc">::</span><span class="fu">dollar</span>(qs[<span class="dv">1</span>]),<span class="st">&quot; to &quot;</span>,scales<span class="sc">::</span><span class="fu">dollar</span>(qs[i<span class="sc">+</span><span class="dv">1</span>])))</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>qs_lbls <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,<span class="cf">function</span>(i) <span class="fu">paste0</span>(<span class="st">&quot;Q&quot;</span>,i,<span class="st">&quot; &quot;</span>,scales<span class="sc">::</span><span class="fu">dollar</span>(qs[i]),<span class="st">&quot; to &quot;</span>,scales<span class="sc">::</span><span class="fu">dollar</span>(qs[i<span class="sc">+</span><span class="dv">1</span>])))</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>iee_data<span class="sc">$</span>fam_quant <span class="ot">&lt;-</span> <span class="fu">cut</span>(iee_data<span class="sc">$</span>fam_med_income, qs, <span class="at">include.lowest =</span> T, <span class="at">labels =</span> qs_lbls)</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>qs <span class="ot">&lt;-</span> <span class="fu">quantile</span>(iee_data<span class="sc">$</span>ind_med_earnings, <span class="at">na.rm =</span> T)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>qs_lbls <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,<span class="cf">function</span>(i) <span class="fu">paste0</span>(<span class="st">&quot;Q&quot;</span>,i,<span class="st">&quot; &quot;</span>,scales<span class="sc">::</span><span class="fu">dollar</span>(qs[<span class="dv">1</span>]),<span class="st">&quot; to &quot;</span>,scales<span class="sc">::</span><span class="fu">dollar</span>(qs[i<span class="sc">+</span><span class="dv">1</span>])))</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>qs_lbls <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,<span class="cf">function</span>(i) <span class="fu">paste0</span>(<span class="st">&quot;Q&quot;</span>,i,<span class="st">&quot; &quot;</span>,scales<span class="sc">::</span><span class="fu">dollar</span>(qs[i]),<span class="st">&quot; to &quot;</span>,scales<span class="sc">::</span><span class="fu">dollar</span>(qs[i<span class="sc">+</span><span class="dv">1</span>])))</span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>iee_data<span class="sc">$</span>ind_quant <span class="ot">&lt;-</span> <span class="fu">cut</span>(iee_data<span class="sc">$</span>ind_med_earnings, qs, <span class="at">include.lowest =</span> T, <span class="at">labels =</span> qs_lbls)</span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(qs,qs_lbls)</span>
@@ -745,10 +745,10 @@ and Q4 contains the top 25%.</p>
 <table>
 <thead>
 <tr class="header">
-<th align="left">has_e</th>
-<th align="left">fam_quant</th>
-<th align="right">freq</th>
-<th align="right">prop</th>
+<th align="left">e</th>
+<th align="left">family median income quartiles</th>
+<th align="right">n</th>
+<th align="right">%</th>
 </tr>
 </thead>
 <tbody>
@@ -760,19 +760,19 @@ and Q4 contains the top 25%.</p>
 </tr>
 <tr class="even">
 <td align="left">no</td>
-<td align="left">Q2 $5,313 to $70,682</td>
+<td align="left">Q2 $57,045 to $70,682</td>
 <td align="right">5843</td>
 <td align="right">0.78</td>
 </tr>
 <tr class="odd">
 <td align="left">no</td>
-<td align="left">Q3 $5,313 to $88,548.50</td>
+<td align="left">Q3 $70,682 to $88,548.50</td>
 <td align="right">5456</td>
 <td align="right">0.73</td>
 </tr>
 <tr class="even">
 <td align="left">no</td>
-<td align="left">Q4 $5,313 to $249,489</td>
+<td align="left">Q4 $88,548.50 to $249,489</td>
 <td align="right">3972</td>
 <td align="right">0.53</td>
 </tr>
@@ -784,19 +784,19 @@ and Q4 contains the top 25%.</p>
 </tr>
 <tr class="even">
 <td align="left">yes</td>
-<td align="left">Q2 $5,313 to $70,682</td>
+<td align="left">Q2 $57,045 to $70,682</td>
 <td align="right">1673</td>
 <td align="right">0.22</td>
 </tr>
 <tr class="odd">
 <td align="left">yes</td>
-<td align="left">Q3 $5,313 to $88,548.50</td>
+<td align="left">Q3 $70,682 to $88,548.50</td>
 <td align="right">2058</td>
 <td align="right">0.27</td>
 </tr>
 <tr class="even">
 <td align="left">yes</td>
-<td align="left">Q4 $5,313 to $249,489</td>
+<td align="left">Q4 $88,548.50 to $249,489</td>
 <td align="right">3544</td>
 <td align="right">0.47</td>
 </tr>
@@ -807,10 +807,10 @@ and Q4 contains the top 25%.</p>
 <table>
 <thead>
 <tr class="header">
-<th align="left">has_e</th>
-<th align="left">ind_quant</th>
-<th align="right">freq</th>
-<th align="right">prop</th>
+<th align="left">e</th>
+<th align="left">individual median earnings quartiles</th>
+<th align="right">n</th>
+<th align="right">%</th>
 </tr>
 </thead>
 <tbody>
@@ -822,19 +822,19 @@ and Q4 contains the top 25%.</p>
 </tr>
 <tr class="even">
 <td align="left">no</td>
-<td align="left">Q2 $2,588 to $33,913</td>
+<td align="left">Q2 $28,750 to $33,913</td>
 <td align="right">5740</td>
 <td align="right">0.75</td>
 </tr>
 <tr class="odd">
 <td align="left">no</td>
-<td align="left">Q3 $2,588 to $41,017.25</td>
+<td align="left">Q3 $33,913 to $41,017.25</td>
 <td align="right">5734</td>
 <td align="right">0.74</td>
 </tr>
 <tr class="even">
 <td align="left">no</td>
-<td align="left">Q4 $2,588 to $246,151</td>
+<td align="left">Q4 $41,017.25 to $246,151</td>
 <td align="right">4490</td>
 <td align="right">0.58</td>
 </tr>
@@ -846,19 +846,19 @@ and Q4 contains the top 25%.</p>
 </tr>
 <tr class="even">
 <td align="left">yes</td>
-<td align="left">Q2 $2,588 to $33,913</td>
+<td align="left">Q2 $28,750 to $33,913</td>
 <td align="right">1901</td>
 <td align="right">0.25</td>
 </tr>
 <tr class="odd">
 <td align="left">yes</td>
-<td align="left">Q3 $2,588 to $41,017.25</td>
+<td align="left">Q3 $33,913 to $41,017.25</td>
 <td align="right">1967</td>
 <td align="right">0.26</td>
 </tr>
 <tr class="even">
 <td align="left">yes</td>
-<td align="left">Q4 $2,588 to $246,151</td>
+<td align="left">Q4 $41,017.25 to $246,151</td>
 <td align="right">3212</td>
 <td align="right">0.42</td>
 </tr>
@@ -935,6 +935,8 @@ stations. The lesson, however, is more about which indicator to use.</p>
 <p>This project was done as an exercise to learn R, Rmarkdown, and the
 basics of joining data from different sources. In that regard, the
 biggest challenge was finding and cleaning U.S. Census data.</p>
+<hr />
+<p>Get data and code at <a href="https://github.com/guasi/e_stations_rmd">github.com/guasi/e_stations_rmd</a></p>
 </div>
 
 
