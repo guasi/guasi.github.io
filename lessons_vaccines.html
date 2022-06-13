@@ -16,8 +16,8 @@
 <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<link href="site_libs/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet" />
-<script src="site_libs/bootstrap-5.1.0/bootstrap.bundle.min.js"></script>
+<link href="site_libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script>
 <script src="site_libs/bs3compat-0.3.1/transition.js"></script>
 <script src="site_libs/bs3compat-0.3.1/tabs.js"></script>
 <script src="site_libs/bs3compat-0.3.1/bs3compat.js"></script>
@@ -350,7 +350,7 @@ $(document).ready(function () {
 </div>
 
 
-<style>.main-container {max-width: 720px;}</style>
+<style type="text/css">.main-container {max-width: 720px;}</style>
 <p>In my quest for interesting health data, I stumbled upon the <a
 href="https://www.cdc.gov/nchs/nis/data_files.htm">National Immunization
 Survey—Child 2014</a> raw data files made public by the <a
@@ -450,7 +450,7 @@ primary color.</p>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">theme =</span> bslib<span class="sc">::</span><span class="fu">bs_theme</span>(<span class="at">version =</span> <span class="dv">5</span>, <span class="at">bootswatch =</span> <span class="st">&quot;yeti&quot;</span>),</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">style</span>(<span class="st">&quot;.table.dataTable tbody td.active, </span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="st">             .table.dataTable tbody tr.active td {</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="st">              .table.dataTable tbody tr.active td {</span></span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="st">               background-color: var(--bs-primary)!important;}&quot;</span>),</span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">DTOutput</span>(<span class="st">&quot;tbl&quot;</span>)</span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>)</span>
@@ -467,10 +467,9 @@ primary color.</p>
 <span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code></pre></div>
-<p>This solution has the added bonus of upgrading to bootstrap 5.
-Honestly, I don’t know why DT decided to hardcode the active row’s
-color. My rule is to avoid as much as possible hardcoding css. You can
-see the initial <a
+<p>Although this solution has the bonus of upgrading to bootstrap 5, it
+suffers from having to edit the css “by hand”. The ability to modify the
+css class via DT’s function would be better. You can see the initial <a
 href="https://stackoverflow.com/questions/72368164/r-shiny-dt-datatable-how-can-i-change-the-selected-class/">solution
 with a working example at StackOverflow</a>.</p>
 </div>
