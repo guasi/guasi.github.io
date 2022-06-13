@@ -11,19 +11,17 @@
 
 
 
-<title>R experiments</title>
+<title>&gt;&gt;&gt;</title>
 
 <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<link href="site_libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet" />
-<script src="site_libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script>
+<link href="site_libs/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-5.1.0/bootstrap.bundle.min.js"></script>
 <script src="site_libs/bs3compat-0.3.1/transition.js"></script>
 <script src="site_libs/bs3compat-0.3.1/tabs.js"></script>
 <script src="site_libs/bs3compat-0.3.1/bs3compat.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
@@ -36,16 +34,6 @@
   ul.task-list{list-style: none;}
     </style>
 
-<style type="text/css">code{white-space: pre;}</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
 
 
 
@@ -243,7 +231,7 @@ $(document).ready(function () {
   <a href="index.html">Home</a>
 </li>
 <li>
-  <a href="ind_e_stations.html">E Stations</a>
+  <a href="index_about.html">About</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -262,57 +250,133 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">R experiments</h1>
+<h1 class="title toc-ignore">&gt;&gt;&gt;</h1>
 
 </div>
 
 
+<style>body {padding-top: 55px;padding-bottom: 40px;}</style>
 <div class="row">
-<div class="col-sm-3 pb-3">
-<div class="card bg-light p-0" style="height:100%">
-<div class="card-header">E Fuel Stations</div>
-<img src="images/e_stations.png" class="border-bottom"/>
-<div class="card-body">
-<p class="card-text">
-My first Rmarkdown!
-<a href="ind_e_stations.html">A look at the relationship between electric fuel stations and zipcode income, joining Census and Department of Energy data.</a>
-</p>
-</div>
-</div>
-</div>
-<div class="col-sm-3 pb-3">
-<div class="card bg-light p-0" style="height:100%">
-<div class="card-header">Homicides Visualizer</div>
-<img src="images/who_homicides.png" class="border-bottom"/>
-<div class="card-body">
-<p class="card-text">
-My first Shiny app!
-<a href="https://ilagos.shinyapps.io/homicides_shiny">A dynamic application to visualize WHO data on homicide estimates worldwide.</a>
-</p>
-</div>
-</div>
-</div>
-<div class="col-sm-3 pb-3">
-<div class="card bg-light p-0" style="height:100%">
-<div class="card-header">Diagnosis Browser</div>
-<img src="images/diagnoses.png" class="border-bottom"/>
-<div class="card-body">
-<p class="card-text">
-My second Shiny app!
-<a href="https://ilagos.shinyapps.io/diagnoses_shiny">A quick browser for the 73,371 medical diagnoses catalogued under ICD-10-CM.</a>
-</p>
-</div>
-</div>
-</div>
-<div class="col-sm-3 pb-3">
-<div class="card bg-light p-0" style="height:100%">
-<div class="card-header">Raw Data Explorer</div>
+<div class="col-sm-3">
+<div class="card" style="height:100%">
+<a href="http://ilagos.shinyapps.io/vaccines">
 <img src="images/vaccines.png" class="border-bottom"/>
+</a>
 <div class="card-body">
-<p class="card-text">
-My third Shiny app!
-<a href="https://ilagos.shinyapps.io/vaccines">A quick visualizer for hundreds of variables collected by the National Immunization Survey.</a>
+<p>
+<strong>Shiny App</strong>
+Explorer for National Immunization Survey raw data
 </p>
+<a class="mbtn" href="https://github.com/guasi/vaccines" title="get code">
+<i class="fa fa-github"></i>
+</a>
+<a class="mbtn" href="lessons_vaccines.html" title="read meta">
+<i class="fa fa-file-code"></i>
+</a>
+<a class="mbtn" href="http://ilagos.shinyapps.io/vaccines" title="view site">
+<i class="fa fa-external-link"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="col-sm-3">
+<div class="card" style="height:100%">
+<a href="http://ilagos.shinyapps.io/diagnoses_shiny">
+<img src="images/diagnoses.png" class="border-bottom"/>
+</a>
+<div class="card-body">
+<p>
+<strong>Shiny App</strong>
+Browser for ICD-10-CM medical diagnoses
+</p>
+<a class="mbtn" href="https://github.com/guasi/diagnoses_shiny" title="get code">
+<i class="fa fa-github"></i>
+</a>
+<a class="mbtn" href="lessons_diagnoses.html" title="read meta">
+<i class="fa fa-file-code"></i>
+</a>
+<a class="mbtn" href="http://ilagos.shinyapps.io/diagnoses_shiny" title="view site">
+<i class="fa fa-external-link"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="col-sm-3">
+<div class="card" style="height:100%">
+<a href="http://ilagos.shinyapps.io/homicides_shiny">
+<img src="images/who_homicides.png" class="border-bottom"/>
+</a>
+<div class="card-body">
+<p>
+<strong>Shiny App</strong>
+Interactive visualization of WHO homicide estimates
+</p>
+<a class="mbtn" href="https://github.com/guasi/homicides_shiny" title="get code">
+<i class="fa fa-github"></i>
+</a>
+<a class="mbtn" href="lessons_homicides.html" title="read meta">
+<i class="fa fa-file-code"></i>
+</a>
+<a class="mbtn" href="http://ilagos.shinyapps.io/homicides_shiny" title="view site">
+<i class="fa fa-external-link"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="col-sm-3">
+<div class="card" style="height:100%">
+<a href="docs/e_stations.html">
+<img src="images/e_stations.png" class="border-bottom"/>
+</a>
+<div class="card-body">
+<p>
+<strong>Note</strong>
+Prevalence of electric fuel stations in wealthy zipcodes
+</p>
+<a class="mbtn" href="https://github.com/guasi/e_stations_rmd" title="get code">
+<i class="fa fa-github"></i>
+</a>
+<a class="mbtn" href="docs/e_stations.html" title="view site">
+<i class="fa fa-external-link"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+<p><br/></p>
+<div id="section" class="section level1">
+<h1>&lt;&lt;&lt;</h1>
+<div class="row">
+<div class="col-sm-3">
+<div class="card" style="height:100%">
+<a href="docs/lagos-phd-dissertation.pdf">
+<img src="images/diss.png" class="border-bottom"/>
+</a>
+<div class="card-body">
+<p>
+<strong>PhD Dissertation</strong>
+Remittance Clinics: Making Relatives, Patients, and Doctors in Rural El Salvador
+</p>
+<a class="mbtn" href="docs/lagos-phd-dissertation.pdf" title="view site">
+<i class="fa fa-file-pdf"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="col-sm-3">
+<div class="card" style="height:100%">
+<a href="docs/lagos-dispersed-bodies.pdf">
+<img src="images/dispersed.png" class="border-bottom"/>
+</a>
+<div class="card-body">
+<p>
+<strong>Vignette</strong>
+Dispersed Bodies: Becoming Patient in Rural Clinics in El Salvador
+</p>
+<a class="mbtn" href="docs/lagos-dispersed-bodies.pdf" title="view site">
+<i class="fa fa-file-pdf"></i>
+</a>
+</div>
 </div>
 </div>
 </div>
